@@ -22,7 +22,6 @@ int main(int argc, char *argv[]) {
 	
 	n = log10(a) + 1;
 	
-	
 	int tab_a[n], tab_b[n], tab_przepelnienie[n], tab_wynik[n+1];
 	//testy
 	printf("a=%d\nb=%d", a, b);
