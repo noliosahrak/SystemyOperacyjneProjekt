@@ -29,7 +29,19 @@ int main(int argc, char *argv[]) {
 		a = a / 10;
 		tab_b[i] = b % 10;
 		b = b / 10;
+		if (i == 0) {
+			tab_wynik[i] = tab_a[i] + tab_b[i];
+		} else {
+			tab_wynik[i] = tab_a[i] + tab_b[i] + tab_przepelnienie[i-1];
+		}
+		if (tab_wynik[i] > 9) {
+			tab_wynik[i] -=  10;
+			tab_przepelnienie[i] = 1;
+		} else {
+			tab_przepelnienie[i] = 0;
+		}
 	}
+	tab_wynik[n] = tab_przepelnienie[n-1];
 	//testy
 	printf("a=%d\nb=%d", a, b);
 	printf("\nn=%d", n);
@@ -40,6 +52,14 @@ int main(int argc, char *argv[]) {
 	printf("\nb=");
 	for (i = n - 1; i >= 0; i--) {
 		printf("|%d|", tab_b[i]);
+	}
+	printf("\np=");
+	for (i = n - 1; i >= 0; i--) {
+		printf("|%d|", tab_przepelnienie[i]);
+	}
+	printf("\nw=");
+	for (i = n; i >= 0; i--) {
+		printf("|%d|", tab_wynik[i]);
 	}
 	return 0;
 }
