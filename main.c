@@ -23,8 +23,23 @@ int main(int argc, char *argv[]) {
 	n = log10(a) + 1;
 	
 	int tab_a[n], tab_b[n], tab_przepelnienie[n], tab_wynik[n+1];
+	int i;
+	for (i = 0; i < n; i++) {
+		tab_a[i] = a % 10;
+		a = a / 10;
+		tab_b[i] = b % 10;
+		b = b / 10;
+	}
 	//testy
 	printf("a=%d\nb=%d", a, b);
 	printf("\nn=%d", n);
+	printf("\na=");
+	for (i = n - 1; i >= 0; i--) {
+		printf("|%d|", tab_a[i]);
+	}
+	printf("\nb=");
+	for (i = n - 1; i >= 0; i--) {
+		printf("|%d|", tab_b[i]);
+	}
 	return 0;
 }
