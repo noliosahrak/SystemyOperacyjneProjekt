@@ -42,24 +42,35 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	tab_wynik[n] = tab_przepelnienie[n-1];
-	//testy
-	printf("a=%d\nb=%d", a, b);
-	printf("\nn=%d", n);
-	printf("\na=");
+	//wypisanie wyniku
+	printf(" ");
 	for (i = n - 1; i >= 0; i--) {
-		printf("|%d|", tab_a[i]);
+		if (tab_przepelnienie[i]) {
+			printf("%d", tab_przepelnienie[i]);
+		} else {
+			printf(" ");
+		}
 	}
-	printf("\nb=");
+	printf("\n  ");
 	for (i = n - 1; i >= 0; i--) {
-		printf("|%d|", tab_b[i]);
+		printf("%d", tab_a[i]);
 	}
-	printf("\np=");
-	for (i = n - 1; i >= 0; i--) {
-		printf("|%d|", tab_przepelnienie[i]);
+	printf("\n+ ");
+	if (tab_b[n-1]) {
+		printf("%d",tab_b[n-1]);
+	} else {
+		printf(" ");
 	}
-	printf("\nw=");
+	for (i = n - 2; i >= 0; i--) {
+		printf("%d", tab_b[i]);
+	}
+	printf("\n");
+	for (i = 0; i < n+2; i++) {
+		printf("-");
+	}
+	printf("\n ");
 	for (i = n; i >= 0; i--) {
-		printf("|%d|", tab_wynik[i]);
+		printf("%d", tab_wynik[i]);
 	}
 	return 0;
 }
