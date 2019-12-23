@@ -69,7 +69,12 @@ int main(int argc, char *argv[]) {
 		printf("-");
 	}
 	printf("\n ");
-	for (i = n; i >= 0; i--) {
+	if (tab_wynik[n]) {
+		printf("%d",tab_wynik[n]);
+	} else {
+		printf(" ");
+	}
+	for (i = n - 1; i >= 0; i--) {
 		printf("%d", tab_wynik[i]);
 	}
 	return 0;
