@@ -4,8 +4,14 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	printf("a = \n");
-	printf("b = \n");
+	int a, b;
+	
+	printf("a = ");
+	scanf("%d", &a);
+	printf("b = ");
+	scanf("%d", &b);
 	printf("\n");
+	//testy
+	printf("a=%d\nb=%d", a, b);
 	return 0;
 }
