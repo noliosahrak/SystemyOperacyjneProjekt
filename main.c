@@ -7,21 +7,20 @@
 int main(int argc, char *argv[]) {
 	int a, b;				//zmienne wczytywane
 	int n;					//d³ugoœæ tablicy
-	
+	//wczytanie zmiennych
 	printf("a = ");
 	scanf("%d", &a);
 	printf("b = ");
 	scanf("%d", &b);
 	printf("\n");
-	
-	if (a < b) {			//zamiana zmiennych
+	//zamiana zmiennych
+	if (a < b) {			
 		n = a;
 		a = b;
 		b = n;
 	}
-	
+	//utworzenie i wype³nienie tablic dziesiêtnych
 	n = log10(a) + 1;
-	
 	int tab_a[n], tab_b[n], tab_przepelnienie[n], tab_wynik[n+1];
 	int i;
 	for (i = 0; i < n; i++) {
@@ -42,7 +41,7 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	tab_wynik[n] = tab_przepelnienie[n-1];
-	//wypisanie wyniku
+	//wypisanie wiersza przepe³nieñ
 	printf(" ");
 	for (i = n - 1; i >= 0; i--) {
 		if (tab_przepelnienie[i]) {
@@ -51,23 +50,27 @@ int main(int argc, char *argv[]) {
 			printf(" ");
 		}
 	}
+	//wypisanie a
 	printf("\n  ");
 	for (i = n - 1; i >= 0; i--) {
 		printf("%d", tab_a[i]);
 	}
+	//wypisanie b
 	printf("\n+ ");
-	if (tab_b[n-1]) {
-		printf("%d",tab_b[n-1]);
-	} else {
+	i = n - 1;
+	while (!tab_b[i]) {
 		printf(" ");
+		i--;
 	}
-	for (i = n - 2; i >= 0; i--) {
+	for (i; i >= 0; i--) {
 		printf("%d", tab_b[i]);
 	}
+	//wypisanie kresek
 	printf("\n");
 	for (i = 0; i < n+2; i++) {
 		printf("-");
 	}
+	//wypisanie wyniku
 	printf("\n ");
 	if (tab_wynik[n]) {
 		printf("%d",tab_wynik[n]);
