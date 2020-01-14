@@ -20,7 +20,11 @@ int main(int argc, char *argv[]) {
 		b = n;
 	}
 	//utworzenie i wype³nienie tablic dziesiêtnych
-	n = log10(a) + 1;
+	if (a == 0) {
+		n = 1;
+	} else {
+		n = log10(a) + 1;
+	}
 	int tab_a[n], tab_b[n], tab_przepelnienie[n], tab_wynik[n+1];
 	int i;
 	for (i = 0; i < n; i++) {
@@ -58,7 +62,7 @@ int main(int argc, char *argv[]) {
 	//wypisanie b
 	printf("\n+ ");
 	i = n - 1;
-	while (!tab_b[i]) {
+	while (!tab_b[i] && i > 0) {
 		printf(" ");
 		i--;
 	}
